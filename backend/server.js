@@ -18,7 +18,10 @@ const port = 4000; // port on which our server will run
 
 // middleware
 app.use(express.json());
-app.use(cors()); // we can acess any backend from the frontend using cors
+app.use(cors({
+    origin: ["https://shaffi0125.github.io", "http://localhost:5173"],
+    credentials: true
+})); // we can acess any backend from the frontend using cors
 
 // db connection
 connectDB();
